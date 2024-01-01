@@ -5,7 +5,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.js",
+  entry: "./src/index.ts",
   devtool: "inline-source-map",
   devServer: {
     static: "./dist",
@@ -26,6 +26,9 @@ module.exports = {
     clean: true,
     assetModuleFilename: "assets/[name][ext][query]",
   },
+  resolve: {
+    extensions: [".ts", ".js"],
+  },
   module: {
     rules: [
       {
@@ -45,6 +48,11 @@ module.exports = {
         generator: {
           filename: "assets/fonts/[name][ext][query]",
         },
+      },
+      {
+        test: /\.ts?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
       },
     ],
   },
