@@ -2,6 +2,7 @@
 
 body {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: "dm_monoregular";
@@ -13,14 +14,57 @@ body {
     gap: 30px;
     width: 1000px;
 
-    figcaption {
-      text-align: center;
+    figure {
+      img {
+        border-radius: 50%;
+        width: 300px;
+        height: 300px;
+
+        &.visible {
+          display: block;
+          -webkit-animation-name: fadeIn;
+          -webkit-animation-duration: 3s;
+          animation-name: fadeIn;
+          animation-duration: 3s;
+        }
+
+        &.invisible {
+          display: none;
+        }
+      }
+
+      figcaption {
+        margin-top: 20px;
+        text-align: center;
+      }
+    }
+  }
+
+  #main {
+    &.invisible {
+      opacity: 0;
     }
 
-    img {
-      border-radius: 50%;
-      width: 300px;
-      height: 300px;
+    &.visible {
+      animation: fadeIn 3s ease-in;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
     }
   }
 }

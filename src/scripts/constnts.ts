@@ -30,3 +30,8 @@ export const descriptions = [
     Let's build something extraordinary together! 🚀`,
   ,
 ];
+
+export const name = "My name is Ivan";
+
+export const displaySpeedDescription = 20; //MS
+export const displaySpeedName = 100; //MS
