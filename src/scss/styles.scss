@@ -36,6 +36,10 @@ body {
       figcaption {
         margin-top: 20px;
         text-align: center;
+
+        #name {
+          font-family: "dm_monolight_italic";
+        }
       }
     }
   }
@@ -65,6 +69,26 @@ body {
     }
     100% {
       opacity: 0;
+    }
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      display: block;
+      border: 1px solid black;
+      padding: 5px 20px;
+      border-radius: 10px;
+      box-shadow: 10px 5px 15px -5px;
+      margin-bottom: 10px;
+      font-family: "dm_monomedium_italic";
+      text-align: center;
+
+      &:hover {
+        background-color: bisque;
+        transform: scale(1.5, 1);
+      }
     }
   }
 }

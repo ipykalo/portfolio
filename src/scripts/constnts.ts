@@ -1,5 +1,5 @@
 export const descriptions = [
-  `👋 Hello there! I'm a seasoned software engineer with over 5 years of
+  `👋 Hello there! I'm a seasoned Software Engineer with over 5 years of
       hands-on experience in crafting web applications.`,
   ,
   `💻 My expertise lies in web development, where I thrive in the HTML,
