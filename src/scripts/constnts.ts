@@ -31,7 +31,7 @@ export const descriptions = [
   ,
 ];
 
-export const name = "My name is Ivan";
+export const name = "My name is Ivan Pykalo";
 
 export const displaySpeedDescription = 20; //MS
 export const displaySpeedName = 100; //MS
