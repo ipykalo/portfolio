@@ -4,6 +4,7 @@ import {
   displaySpeedName,
   name,
 } from "./scripts/constnts";
+import { runMatrixRain } from "./scripts/matrix-rain";
 
 import "./scss/styles.scss";
 
@@ -12,6 +13,7 @@ addEventListener("load", () => {
   setTimeout(() => switchProfileImage(), getDelay(descriptions));
   setTimeout(() => showName(), getDelay(descriptions));
   setTimeout(() => showMainContent(), getDelay(descriptions));
+  setTimeout(() => runMatrixRain(), getDelay(descriptions));
 });
 
 function showDescription(): void {

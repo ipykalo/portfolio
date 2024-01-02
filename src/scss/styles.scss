@@ -6,98 +6,115 @@ body {
   align-items: center;
   justify-content: center;
   font-family: "dm_monoregular";
+  background: #000;
 
-  header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 30px;
-    width: 1000px;
+  .content {
+    background-color: #ffffff;
 
-    figure {
-      img {
-        border-radius: 50%;
-        width: 300px;
-        height: 300px;
-
-        &.visible {
-          display: block;
-          -webkit-animation-name: fadeIn;
-          -webkit-animation-duration: 3s;
-          animation-name: fadeIn;
-          animation-duration: 3s;
-        }
-
-        &.invisible {
-          display: none;
-        }
-      }
-
-      figcaption {
-        margin-top: 20px;
-        text-align: center;
-
-        #name {
-          font-family: "dm_monolight_italic";
-        }
-      }
-    }
-  }
-
-  #main {
-    &.invisible {
-      opacity: 0;
-    }
-
-    &.visible {
-      animation: fadeIn 3s ease-in;
-    }
-  }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes fadeOut {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-
-  ul {
-    list-style: none;
-
-    li {
-      display: block;
-      border: 1px solid black;
-      padding: 5px 20px;
-      border-radius: 10px;
-      box-shadow: 10px 5px 15px -5px;
-      margin-bottom: 10px;
-      font-family: "dm_monomedium_italic";
-      text-align: center;
-
-      &:hover {
-        background-color: bisque;
-        transform: scale(1.5, 1);
-      }
-    }
-  }
-
-  article {
-    &.skills {
+    header {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
-      gap: 100px;
+      align-items: center;
+      gap: 30px;
+      width: 1000px;
+
+      figure {
+        img {
+          border-radius: 50%;
+          width: 300px;
+          height: 300px;
+
+          &.visible {
+            display: block;
+            -webkit-animation-name: fadeIn;
+            -webkit-animation-duration: 3s;
+            animation-name: fadeIn;
+            animation-duration: 3s;
+          }
+
+          &.invisible {
+            display: none;
+          }
+        }
+
+        figcaption {
+          margin-top: 20px;
+          text-align: center;
+
+          #name {
+            font-family: "dm_monolight_italic";
+          }
+        }
+      }
     }
+
+    #main {
+      &.invisible {
+        opacity: 0;
+      }
+
+      &.visible {
+        animation: fadeIn 3s ease-in;
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeOut {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    article {
+      &.skills {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 100px;
+      }
+
+      section {
+        width: 200px;
+      }
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        display: block;
+        border: 1px solid black;
+        padding: 5px 20px;
+        border-radius: 10px;
+        box-shadow: 10px 5px 15px -5px;
+        margin-bottom: 10px;
+        font-family: "dm_monomedium_italic";
+        text-align: center;
+
+        &:hover {
+          background-color: bisque;
+          transform: scale(1.5, 1);
+        }
+      }
+    }
+  }
+
+  canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
   }
 }
