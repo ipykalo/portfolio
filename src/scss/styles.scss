@@ -103,9 +103,17 @@ body {
                 font-size: 0.8em;
               }
 
-              code {
-                display: inline-flex;
-                flex-direction: column;
+              .project_details {
+                display: grid;
+                grid-template-columns: 80px 1fr;
+                grid-template-rows: auto;
+                grid-gap: 10px;
+
+                p {
+                  font-family: monospace;
+                  padding: 0;
+                  margin: 0;
+                }
               }
             }
           }
