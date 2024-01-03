@@ -90,17 +90,22 @@ body {
               border-radius: 10px;
               border: 1px solid black;
 
-              p {
-                font-family: "dm_monomedium";
-                font-size: 0.8em;
-              }
-
               &:hover {
                 background-color: rgb(168, 168, 171);
                 color: #183047;
                 transition-duration: 1s;
                 transform: scale(1.4) translate3d(50px, 50px, 50px);
                 box-shadow: 10px 10px 10px -3px;
+              }
+
+              p {
+                font-family: "dm_monomedium";
+                font-size: 0.8em;
+              }
+
+              code {
+                display: inline-flex;
+                flex-direction: column;
               }
             }
           }
