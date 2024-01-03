@@ -1,4 +1,8 @@
-import { MATRIX_RAIN_LETTERS } from "./constnts";
+import {
+  MATRIX_RAIN_DROPS_SPEED,
+  MATRIX_RAIN_LETTERS,
+  MATRIX_RAIN_TIME,
+} from "./constnts";
 
 const canvas = document.querySelector("canvas");
 // Setting the width and height of the canvas
@@ -24,8 +28,24 @@ export function runMatrixRain(): void {
     drops[i] = 1;
   }
 
+  const startTime = new Date().getTime();
   // Loop the animation
-  setInterval(() => draw(ctx, canvas, drops, fontSize, letters), 33);
+  const interval = setInterval(function () {
+    if (new Date().getTime() - startTime > MATRIX_RAIN_TIME) {
+      clearInterval(interval);
+
+      const startTimeStopAnimation = new Date().getTime();
+      const innerInterval = setInterval((): void => {
+        if (new Date().getTime() - startTimeStopAnimation > MATRIX_RAIN_TIME) {
+          clearInterval(innerInterval);
+          return;
+        }
+        draw(ctx, canvas, drops, fontSize, letters, "#000");
+      }, MATRIX_RAIN_DROPS_SPEED);
+      return;
+    }
+    draw(ctx, canvas, drops, fontSize, letters, "#0f0");
+  }, MATRIX_RAIN_DROPS_SPEED);
 }
 
 function draw(
@@ -33,18 +53,20 @@ function draw(
   canvas: HTMLCanvasElement,
   drops: number[],
   fontSize: number,
-  letters: string[]
+  letters: string[],
+  textColor: string
 ): void {
   ctx.fillStyle = "rgba(0, 0, 0, .1)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   for (let i = 0; i < drops.length; i++) {
+    const MAGIC_NUMBER = 0.95;
     let text = letters[Math.floor(Math.random() * letters.length)];
-    ctx.fillStyle = "#0f0";
+    ctx.fillStyle = textColor;
     ctx.fillText(text, i * fontSize, drops[i] * fontSize);
     drops[i]++;
 
-    if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) {
+    if (drops[i] * fontSize > canvas.height && Math.random() > MAGIC_NUMBER) {
       drops[i] = 0;
     }
   }
