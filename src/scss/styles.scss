@@ -15,6 +15,7 @@ body {
   .content {
     background-color: #ffffff;
     margin: 70px;
+    padding: 20px 50px;
 
     header {
       display: flex;
@@ -81,12 +82,11 @@ body {
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto;
-            grid-row-gap: 10px;
-            grid-column-gap: 10px;
+            grid-gap: 20px;
 
             section {
               width: 400px;
-              padding: 10px;
+              padding: 20px;
               border-radius: 10px;
               border: 1px solid black;
 
