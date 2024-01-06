@@ -1,0 +1,224 @@
+@font-face {
+  font-family: "dm_monoitalic";
+  src: url("./../assets/fonts/dmmono-italic-webfont.woff2") format("woff2"), url("./../assets/fonts/dmmono-italic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "dm_monolight";
+  src: url("./../assets/fonts/dmmono-light-webfont.woff2") format("woff2"), url("./../assets/fonts/dmmono-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "dm_monolight_italic";
+  src: url("./../assets/fonts/dmmono-lightitalic-webfont.woff2") format("woff2"), url("./../assets/fonts/dmmono-lightitalic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "dm_monomedium";
+  src: url("./../assets/fonts/dmmono-medium-webfont.woff2") format("woff2"), url("./../assets/fonts/dmmono-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "dm_monomedium_italic";
+  src: url("./../assets/fonts/dmmono-mediumitalic-webfont.woff2") format("woff2"), url("./../assets/fonts/dmmono-mediumitalic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "dm_monoregular";
+  src: url("./../assets/fonts/dmmono-regular-webfont.woff2") format("woff2"), url("./../assets/fonts/dmmono-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  --white: #fff;
+  --white-rgb: #f4f4f9;
+  --dark: #000;
+  --blue: #0d589f;
+  --gray: #7a7b7e;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "dm_monoregular";
+  background: var(--dark);
+}
+body .content {
+  background-color: var(--white);
+  margin: 70px;
+  padding: 20px 50px;
+  width: 70%;
+}
+body .content header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+body .content header figure img {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+}
+body .content header figure img.visible {
+  display: block;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 3s;
+  animation-name: fadeIn;
+  animation-duration: 3s;
+}
+body .content header figure img.invisible {
+  display: none;
+}
+body .content header figure figcaption {
+  margin-top: 20px;
+  text-align: center;
+}
+body .content header figure figcaption #name {
+  font-family: "dm_monolight_italic";
+}
+body .content #main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+body .content #main.invisible {
+  opacity: 0;
+}
+body .content #main.visible {
+  animation: fadeIn 3s ease-in;
+}
+body .content #main article.skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+}
+body .content #main article.projects .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  grid-template-rows: auto;
+  grid-gap: 20px;
+}
+body .content #main article.projects .grid section {
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--dark);
+}
+body .content #main article.projects .grid section:hover {
+  background-color: var(--white-rgb);
+  color: var(--blue);
+  transition-duration: 1s;
+  transform: scale(1.4) translate3d(50px, -50px, 50px);
+  box-shadow: 10px 10px 10px -3px;
+}
+body .content #main article.projects .grid section p {
+  font-family: "dm_monomedium";
+  font-size: 0.8em;
+}
+body .content #main article.projects .grid section .project_details {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  grid-template-rows: auto;
+  grid-gap: 10px;
+}
+body .content #main article.projects .grid section .project_details p {
+  font-family: monospace;
+  padding: 0;
+  margin: 0;
+}
+body .content #main article.projects img {
+  width: 400px;
+}
+body .content #main article h2 {
+  text-align: center;
+}
+body .content #main article ul {
+  list-style: none;
+}
+body .content #main article ul li {
+  display: block;
+  border: 1px solid var(--dark);
+  padding: 5px 20px;
+  border-radius: 10px;
+  box-shadow: 10px 5px 15px -5px;
+  margin-bottom: 10px;
+  font-family: "dm_monomedium_italic";
+  text-align: center;
+}
+body .content #main article ul li:hover {
+  background-color: var(--white-rgb);
+  color: var(--blue);
+  transform: scale(1.3);
+  transition-duration: 0.2s;
+}
+body .content #footer {
+  border: 2px solid var(--dark);
+  padding: 30px;
+  border-radius: 10px;
+  background-color: var(--gray);
+}
+body .content #footer.invisible {
+  opacity: 0;
+}
+body .content #footer.visible {
+  animation: fadeIn 3s ease-in;
+}
+body .content #footer a {
+  color: var(--white);
+  text-decoration: none;
+  border: 1px solid var(--white);
+  padding: 5px;
+  border-radius: 5px;
+}
+body .content #footer a:hover {
+  background-color: var(--white);
+  color: var(--gray);
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+ }
+  100% {
+    opacity: 1;
+ }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+ }
+  100% {
+    opacity: 0;
+ }
+}
+body canvas {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+@media (max-width: 1200px) {
+  body .content header {
+    flex-direction: column;
+    align-items: center;
+ }
+  body .content #main article.projects .grid section:hover {
+    transform: scale(1.3);
+ }
+  body .content #main article.projects .grid section p {
+    font-family: "dm_monomedium";
+    font-size: 1em;
+ }
+}
