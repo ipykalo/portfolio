@@ -30,14 +30,14 @@ export function runMatrixRain(): void {
 
   const startTime = new Date().getTime();
   // Loop the animation
-  const interval = setInterval(function () {
+  const interval = setInterval((): void => {
     if (new Date().getTime() - startTime > MATRIX_RAIN_TIME) {
       clearInterval(interval);
 
-      const startTimeStopAnimation = new Date().getTime();
-      const innerInterval = setInterval((): void => {
-        if (new Date().getTime() - startTimeStopAnimation > MATRIX_RAIN_TIME) {
-          clearInterval(innerInterval);
+      const stopTimeAnimation = new Date().getTime();
+      const stopAnimationInterval = setInterval((): void => {
+        if (new Date().getTime() - stopTimeAnimation > MATRIX_RAIN_TIME) {
+          clearInterval(stopAnimationInterval);
           return;
         }
         draw(ctx, canvas, drops, fontSize, letters, "#000");

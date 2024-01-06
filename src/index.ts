@@ -13,6 +13,7 @@ addEventListener("load", () => {
   setTimeout(() => switchProfileImage(), getDelay(descriptions));
   setTimeout(() => showName(), getDelay(descriptions));
   setTimeout(() => showMainContent(), getDelay(descriptions));
+  setTimeout(() => showFooterContent(), getDelay(descriptions));
   setTimeout(() => runMatrixRain(), getDelay(descriptions));
 });
 
@@ -54,6 +55,12 @@ function showMainContent(): void {
   const mainBlock: HTMLElement = document.getElementById("main");
   mainBlock.classList.add("visible");
   mainBlock.classList.remove("invisible");
+}
+
+function showFooterContent(): void {
+  const footer: HTMLElement = document.getElementById("footer");
+  footer.classList.add("visible");
+  footer.classList.remove("invisible");
 }
 
 function switchProfileImage(): void {
